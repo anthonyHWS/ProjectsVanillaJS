@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validator</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Register With Us</h1>
+
+        <form>
+            <label for="username">Username</label>
+            <input id="userInput" type="text" placeholder="John_Doe">
+            <small id="userSmall" >Username must be 6 charchters long</small>
+
+            <label for="email">Email</label>
+            <input type="text" id="emailInput" placeholder="johndoe@gmail.com">
+            <small id="emailSmall">Email not valid</small>
+
+            <label for="password">Password</label>
+            <input type="text" placeholder="Enter password" id="passwordInput">
+            <small class="password" id="passwordSmall">Password must contain at least 6 charchters</small>
+
+            <label for="username">Confirm Password</label>
+            <input type="text" placeholder="Enter password again" id="password2Input">
+            <small class="passwordConfirm" id="password2Small">password doesnt match</small>
+
+            <button id="submit">Submit</button>
+
+
+        </form>
+    </div>
+
+    
+
+
+
+    <script src="./script.js"></script>
+</body>
+</html>
