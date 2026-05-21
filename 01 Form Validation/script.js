@@ -6,6 +6,7 @@ const password = document.getElementById("password");
 const password2 = document.getElementById("password2");
 
 
+
 // Show input error
 function showError(input, message){
     const formControl = input.parentElement;
@@ -30,40 +31,31 @@ const isValidEmail = (email) => {
     return emailRegex.test(email.trim().toLowerCase());
 };
 
+// Check Required
+function checkRequired (inputArr){
+        inputArr.forEach(input => {
+            if (input.value.trim() === ""){
+                showError(input, `${input.id} is required`)
+            } else {
+                showSuccess(input)
+            }
+        })
+    }
+
+
+// Get fieldname
+function getFieldName(input){
+    return input.id;
+}
+
 
 
 // Event Listeners
 form.addEventListener("submit", (e) => {
     e.preventDefault();
+    checkRequired([username, email, password, password2]);
 
-    // username
-    if (username.value == false){
-        showError(username, "username is required")
-    } else {
-        showSuccess(username)
-    };
-
-    // email
-    if (email.value == false){
-        showError(email, "Email is required")
-    } else if (!isValidEmail(email.value)) {
-        showError(email, "Email is not valid")
-    } else {
-        showSuccess(email)
-    };
-
-    // password
-    if (password.value == false){
-        showError(password, "password is required")
-    } else {
-        showSuccess(password)
-    };
-    // password2
-    if (password2.value == false){
-        showError(password2, "password is required")
-    } else {
-        showSuccess(password2)
-    };
+    
 })
 
 
